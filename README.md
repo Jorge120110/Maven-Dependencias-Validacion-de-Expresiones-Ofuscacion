@@ -20,7 +20,7 @@ Ejecutar el JAR ofuscado: java -jar target/stackHandler-0.0.1-SNAPSHOT-obf.jar.
 
 ### ¿Qué tanto se dificulta la lectura?: 
 
-Desde mi punto de vista, utilizando YGuard (porque me daba muchos menos problemas que ProGuard), si bien la sintaxis general si cambia, no se imposibilita su lectura, una persona que sepa medianamente lo que hace (incluso yo sin mucha experiencia) podría tomar las funciones e inspeccionarlo para obtener sus funciones, esta bien para confundir, pero creo que no seria lo optimo para la seguridad.
+Desde mi punto de vista, utilizando YGuard (porque me daba muchos menos problemas que ProGuard), si bien la sintaxis general si cambia, no se imposibilita su lectura, una persona que sepa medianamente lo que hace (incluso yo sin mucha experiencia) podría tomar las funciones inspeccionandolo un poco de cerca, esta bien para confundir, pero creo que no seria lo optimo para la seguridad.
 
 ### ¿Se pierde claridad estructural?: 
 
