@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>umg.edu.gt.data-structure</groupId>
+	<artifactId>stackHandler</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>umg.edu.gt.data-structure</groupId>
+			<artifactId>umg.edu.gt.data-structure.stack</artifactId>
+			<version>0.0.3-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.13.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.5.2</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>stackHandler.handler.Main</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>obfuscate</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>3.1.0</version>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+								  <target>
+								    <taskdef name="yguard" classname="com.yworks.yguard.YGuardTask" 
+								             classpathref="maven.plugin.classpath" />
+								    <yguard>
+								      <inoutpair in="${project.build.directory}/${project.build.finalName}.jar" 
+								                 out="${project.build.directory}/${project.build.finalName}-obf.jar" />
+								      
+								      <rename logfile="${project.build.directory}/yguard.log.xml">
+										    <keep>
+										        <class name="stackHandler.handler.Main">
+										            <method name="void main(java.lang.String[])" />
+										        </class>
+										
+										        <class classes="public" methods="public" fields="public">
+										            <patternset>
+										                <include name="umg.edu.gt.data_structure.stack.**" />
+										                <include name="stackHandler.handler.**" />
+										            </patternset>
+										        </class>
+										    </keep>
+										</rename>
+								    </yguard>
+								  </target>
+								</configuration>
+							</execution>
+						</executions>
+						<dependencies>
+							<dependency>
+								<groupId>com.yworks</groupId>
+								<artifactId>yguard</artifactId>
+								<version>4.1.0</version>
+							</dependency>
+						</dependencies>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

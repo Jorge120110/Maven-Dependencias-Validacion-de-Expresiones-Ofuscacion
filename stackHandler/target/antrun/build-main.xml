@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <taskdef classname="com.yworks.yguard.YGuardTask" name="yguard" classpathref="maven.plugin.classpath" />
+    <yguard>
+      <inoutpair in="C:\Users\jorge\OneDrive\Desktop\Progra III\Tarea 3 - Maven + Dependencias + Validación de Expresiones + Ofuscación\stackHandler\target/stackHandler-0.0.1-SNAPSHOT.jar" out="C:\Users\jorge\OneDrive\Desktop\Progra III\Tarea 3 - Maven + Dependencias + Validación de Expresiones + Ofuscación\stackHandler\target/stackHandler-0.0.1-SNAPSHOT-obf.jar" />
+      <rename logfile="C:\Users\jorge\OneDrive\Desktop\Progra III\Tarea 3 - Maven + Dependencias + Validación de Expresiones + Ofuscación\stackHandler\target/yguard.log.xml">
+        <keep>
+          <class methods="public" name="stackHandler.handler.Main" fields="public" />
+          <class methods="public" classes="public" fields="public">
+            <patternset>
+              <include name="umg.edu.gt.data_structure.stack.**" />
+              <include name="stackHandler.handler.**" />
+            </patternset>
+          </class>
+        </keep>
+      </rename>
+    </yguard>
+  </target>
+</project>

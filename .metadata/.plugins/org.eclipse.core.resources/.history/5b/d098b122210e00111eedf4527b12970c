@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>umg.edu.gt.data-structure</groupId>
+  <artifactId>umg.edu.gt.data-structure.stack</artifactId>
+  <version>0.0.3-SNAPSHOT</version>
+
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <profiles>
+    <profile>
+      <id>obfuscate</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>3.1.0</version>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <target>
+                    <taskdef name="yguard" classname="com.yworks.yguard.YGuardTask" 
+                             classpathref="maven.plugin.classpath" />
+                    <yguard>
+                      <inoutpair in="${project.build.directory}/${project.build.finalName}.jar" 
+                                 out="${project.build.directory}/${project.build.finalName}-obf.jar" />
+                      <expose>
+                        <class classes="public" methods="public" fields="public">
+                          <patternset>
+                            <include name="umg.edu.gt.data_structure.stack.**" />
+                          </patternset>
+                        </class>
+                      </expose>
+                    </yguard>
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+            <dependencies>
+              <dependency>
+                <groupId>com.yworks</groupId>
+                <artifactId>yguard</artifactId>
+                <version>4.1.0</version>
+              </dependency>
+            </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

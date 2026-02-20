@@ -1,0 +1,21 @@
+INDEX VERSION 1.134+C:\Users\jorge\OneDrive\Desktop\Progra III\Tarea 3 - Maven + Dependencias + Validación de Expresiones + Ofuscación\.metadata\.plugins\org.eclipse.jdt.core
+1780944186.index
+999458341.index
+3434135846.index
+2479106769.index
+2057253723.index
+1162248053.index
+1840256677.index
+298447088.index
+1865797976.index
+2593327109.index
+1332803176.index
+2045816060.index
+856941372.index
+2990956764.index
+3737919151.index
+1477554858.index
+2912175370.index
+3055471741.index
+2738263432.index
+2523342736.index

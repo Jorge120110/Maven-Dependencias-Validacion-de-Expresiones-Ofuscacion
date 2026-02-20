@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yguard version="1.5">
+<!--
+  yGuard Bytecode Obfuscator, v4.1.0, a Product of yWorks GmbH - http://www.yworks.com
+
+  Logfile created on Fri Feb 20 00:15:58 CST 2026
+
+  Jar file to be obfuscated:           stackHandler-0.0.1-SNAPSHOT.jar
+  Target Jar file for obfuscated code: stackHandler-0.0.1-SNAPSHOT-obf.jar
+
+-->
+<!--
+  Memory in use after class data structure built: 19877096 bytes
+  Total memory available                        : 70254592 bytes
+-->
+<expose>
+  <class name="stackHandler.handler.Main"/>
+  <method class="stackHandler.handler.Main" name="void main(java.lang.String[])"/>
+  <class name="umg.edu.gt.data_structure.stack.impl.SymbolValidator"/>
+  <method class="umg.edu.gt.data_structure.stack.impl.SymbolValidator" name="boolean isBalanced(java.lang.String)"/>
+  <class name="umg.edu.gt.data_structure.stack.manual.Node"/>
+  <class name="umg.edu.gt.data_structure.stack.manual.StackLinked"/>
+  <method class="umg.edu.gt.data_structure.stack.manual.StackLinked" name="int size()"/>
+  <method class="umg.edu.gt.data_structure.stack.manual.StackLinked" name="boolean isEmpty()"/>
+  <method class="umg.edu.gt.data_structure.stack.manual.StackLinked" name="char peek()"/>
+  <method class="umg.edu.gt.data_structure.stack.manual.StackLinked" name="umg.edu.gt.data_structure.stack.manual.Node getNodeInit()"/>
+  <method class="umg.edu.gt.data_structure.stack.manual.StackLinked" name="void initStack(char)"/>
+  <method class="umg.edu.gt.data_structure.stack.manual.StackLinked" name="char pop()"/>
+  <method class="umg.edu.gt.data_structure.stack.manual.StackLinked" name="int getCount()"/>
+  <method class="umg.edu.gt.data_structure.stack.manual.StackLinked" name="void push(char)"/>
+  <class name="umg.edu.gt.data_structure.stack.Main"/>
+  <method class="umg.edu.gt.data_structure.stack.Main" name="void main(java.lang.String[])"/>
+</expose>
+<map>
+  <method class="umg.edu.gt.data_structure.stack.impl.SymbolValidator" name="boolean isPair(char, char)" map="A"/>
+  <field class="umg.edu.gt.data_structure.stack.manual.Node" name="next" map="A"/>
+  <field class="umg.edu.gt.data_structure.stack.manual.Node" name="count" map="B"/>
+  <field class="umg.edu.gt.data_structure.stack.manual.Node" name="value" map="C"/>
+  <field class="umg.edu.gt.data_structure.stack.manual.StackLinked" name="top" map="A"/>
+</map>
+</yguard>
